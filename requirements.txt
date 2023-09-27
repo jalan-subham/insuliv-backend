@@ -1,9 +1,9 @@
-fastapi[all]
+fastapi==0.103.1
 scikit-learn==1.3.0
-numpy[all]
-pandas[all]
-twilio[all]
-PyPDF2[all]
+numpy==1.24.3
+pandas==1.5.3
+twilio==8.9.0
+PyPDF2==3.0.1
 langchain==0.0.302
 cohere==4.27
 faiss-cpu==1.7.4
