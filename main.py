@@ -194,7 +194,7 @@ def generate_report():
 
 @app.get("/ocr")
 def send_ocr(url: Union[str, None] = None):
-    result = mindee_client.doc_from_path(url).parse(
+    result = mindee_client.doc_from_url(url).parse(
     documents.TypeCustomV1, endpoint_name="medication_presciption")
     return_json = {}
     for field_name, field_value in result.document.fields.items():
