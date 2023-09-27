@@ -31,28 +31,28 @@ def generate_bars(vals, output_path):
     values = [less_50[0], less_80[0], less_150[0], less_190[0]]
 
     for i, bar in enumerate(b4):
-        value = values[i]
+        value = values[3]
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2,
                 f"{value}%", ha="center", va="center", color="black", fontproperties=bold_font_properties, weight="bold")
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2- 0.1 , labels[0], ha="center", va="center", color="black",
                 fontproperties=font_properties, weight="bold")
 
     for i, bar in enumerate(b3):
-        value = values[i]
+        value = values[2]
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2,
                 f"{value}%", ha="center", va="center", color="black", fontproperties=bold_font_properties, weight="bold")
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2 - 0.1 , labels[1], ha="center", va="center", color="black",
                 fontproperties=font_properties, weight="bold")
 
     for i, bar in enumerate(b2):
-        value = values[i]
+        value = values[1]
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2,
                 f"{value}%", ha="center", va="center", color="black", fontproperties=bold_font_properties, weight="bold")
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2 - 0.1, labels[2], ha="center", va="center", color="black",
                 fontproperties=font_properties, weight="bold")
 
     for i, bar in enumerate(b1):
-        value = values[i]
+        value = values[0]
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2,
                 f"{value}%", ha="center", va="center", color="black", fontproperties=bold_font_properties, weight="bold")
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_y() + bar.get_height() / 2 - 0.1, labels[3], ha="center", va="center", color="black",

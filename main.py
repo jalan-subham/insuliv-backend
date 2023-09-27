@@ -52,7 +52,7 @@ for file in os.listdir():
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000, chunk_overlap=150, length_function=len
 )
-
+os.chdir("..")
 chunks = text_splitter.split_text(text=text)
 
 embeddings = CohereEmbeddings(
@@ -84,7 +84,7 @@ account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c" # TWILIO
 auth_token ="2f1452378ac9a5bc6614eade59105fb9"
 client = twilio.rest.Client(account_sid, auth_token)
 
-# glucose_model = pickle.load(open("model.sav", 'rb')) # GLUCOSE PREDICTION
+glucose_model = pickle.load(open("./model.sav", 'rb')) # GLUCOSE PREDICTION
 
 mindee_client = Client(api_key="1c283084c67d6da8a2b4e13c0f126209").add_endpoint( # ocr
     account_name="AbhinavKun",
@@ -169,10 +169,11 @@ def generate_report():
     
 
     # Find all img elements and update their src attributes
-    img_elements = soup.find_all('img')[1:]
+    img_elements = soup.find_all('img')[2:]
     for i, img in enumerate(img_elements):
         img['src'] = remote_image_urls[i]
-
+    time_p = soup.find_all("p", {"class": "time_p"})[0]
+    time_p.string = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # Save the updated HTML content to a new file
     with open('updated_template.html', 'w') as file:
         file.write(str(soup))
