@@ -81,7 +81,7 @@ def read_root():
 @app.get("/glucose")
 def read_item(carbs: Union[float, None] = None, bpm : Union[float, None] = None, calories: Union[float, None] = None):
     if carbs and bpm and calories:
-        return {"glucose" : glucose_model.predict(np.array([[calories, carbs, bpm]]))[0]}
+        return {"glucose" : glucose_model.predict(np.array([[calories, carbs, bpm]]))[0]*18}
     return {}
 
 
