@@ -1,7 +1,7 @@
 fastapi[all]
 scikit-learn[all]
 numpy[all]
-pydantic[all]
+pydantic==1.10.9
 twilio[all]
 PyPDF2[all]
 langchain[all]
