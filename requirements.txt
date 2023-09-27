@@ -1,1 +1,10 @@
 fastapi[all]
+scikit-learn
+pickle
+numpy
+pydantic
+twilio
+PyPDF2
+langchain
+cohere
+faiss-cpu
