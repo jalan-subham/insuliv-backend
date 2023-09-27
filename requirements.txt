@@ -1,8 +1,6 @@
 fastapi[all]
 scikit-learn[all]
 numpy[all]
-pydantic==2.3.0
-pydantic_core==2.6.3
 twilio[all]
 PyPDF2[all]
 langchain[all]
