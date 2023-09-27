@@ -7,7 +7,7 @@ from fastapi import FastAPI
 import numpy as np 
 from pydantic import BaseModel
 import os
-from twilio.rest import Client
+import twilio.rest
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.cohere import CohereEmbeddings
@@ -79,7 +79,7 @@ app = FastAPI() # FASTAPI
 
 account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c" # TWILIO
 auth_token ="2f1452378ac9a5bc6614eade59105fb9"
-client = Client(account_sid, auth_token)
+client = twilio.rest.Client(account_sid, auth_token)
 
 glucose_model = pickle.load(open("model.sav", 'rb')) # GLUCOSE PREDICTION
 
