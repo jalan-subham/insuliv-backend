@@ -47,7 +47,7 @@ def recommend(food_name):
     chunks = text_splitter.split_text(text=text)
 
     embeddings = CohereEmbeddings(
-        cohere_api_key=os.environ.get("cohere_api")
+        cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
     )
     VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 
@@ -57,9 +57,9 @@ def recommend(food_name):
 
     if query:
         docs = VectorStore.similarity_search(query=query, k=3)
-        client = cohere.Client(os.environ.get("cohere_api"))
+        client = cohere.Client("0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd")
         llm = Cohere(
-            client=client, cohere_api_key=os.environ.get("cohere_api")
+            client=client, cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
         )
         chain = load_qa_chain(llm=llm, chain_type="stuff")
         response = chain.run(input_documents=docs, question=query)
@@ -67,8 +67,8 @@ def recommend(food_name):
 
 app = FastAPI()
 
-account_sid  =os.environ.get("twilio_sid")
-auth_token =os.environ.get("twiliio_auth")
+account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c"
+auth_token ="2f1452378ac9a5bc6614eade59105fb9"
 client = Client(account_sid, auth_token)
 
 glucose_model = pickle.load(open("model.sav", 'rb'))
