@@ -21,8 +21,11 @@ from matplotlib import pyplot as plt
 from matplotlib.font_manager import FontProperties
 import plots
 from datetime import datetime, timedelta
-import beautifulsoup as bs4
-
+from bs4 import BeautifulSoup
+import pdfkit
+import requests 
+import json
+from concurrent.futures import ThreadPoolExecutor
 
 
 def read_text_file(file_path): # for food recommendation
@@ -108,10 +111,71 @@ def recommend_food(food: Union[str, None] = None):
 
 @app.get("/report")
 def generate_report():
-    plots.generate_bars([30, 30, 10, 30], "bars/bars.png")
-    plots.generate_bpm([10, 20, 30, 40, 50, 60, 70], "bars/bpm.png")
-    plots.generate_calories([2000, 3000, 2500, 2250, 1800, 1900, 1500], "bars/calories.png")
-    plots.generate_glucose([10, 20, 40, 50, 60, 70, 80], "bars/glucose.png")
 
-    # generate the glucose wise bar graph (also need )
+    local_image_urls = ["bars/bars.png", "bars/bpm.png", "bars/calories.png", "bars/glucose.png"]
+    report_name = "report.pdf"
+    # generate plots 
+    data = requests.get("https://apollo-web-th7i.onrender.com/api/meta/weekly").text
+    data = json.loads(data)
+    bpm_data = data[2]["data"]
+    carbs_data = data[0]["data"]
+    calories_data = data[1]["data"]
+
+    def predict_glucose(calories_, carbs_, bpm_):
+        return glucose_model.predict(np.array([[calories_, carbs_, bpm_]]))[0]*18
+
+    glucose_data = np.array(list(map(predict_glucose,calories_data, carbs_data, bpm_data)))
+    bars_data = np.array([int(np.sum(glucose_data <= 50)), int(np.sum(glucose_data <= 80)), int(np.sum(glucose_data <= 150)), int(np.sum(glucose_data <= 190))])
+    print(bars_data)
+    bars_data = ((bars_data/bars_data.size)*100).astype(int)
+    plots.generate_bars(bars_data, local_image_urls[0])
+    plots.generate_bpm(bpm_data, local_image_urls[1])
+    plots.generate_calories(calories_data, local_image_urls[2])
+    plots.generate_glucose(glucose_data, local_image_urls[3])
+
+    # upload images 
+
+    
+    def post_image(img_name):
+        url='https://apollo-web-th7i.onrender.com/api/image/upload'
+        files={'file':open(img_name, "rb")}
+        response=requests.post(url,files=files,timeout=10)
+        return json.loads(response.text)["img_url"]
+
+    remote_image_urls = list(map(post_image,local_image_urls))
+
+
+    # update html 
+
+    with open('pdf_template.html', 'r') as file:
+        html_content = file.read()
+
+    # Create a BeautifulSoup object to parse the HTML
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    
+
+    # Find all img elements and update their src attributes
+    img_elements = soup.find_all('img')
+    for i, img in enumerate(img_elements):
+        img['src'] = remote_image_urls[i]
+
+    # Save the updated HTML content to a new file
+    with open('updated_template.html', 'w') as file:
+        file.write(str(soup))
+    
+    # generate report 
+
+    config = pdfkit.configuration(
+    wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
+
+    pdfkit.from_file("updated_template.html", report_name, configuration=config)
+
+    url='https://apollo-web-th7i.onrender.com/api/image/pdf/upload'
+    files={'file':open(report_name, "rb")}
+    response=requests.post(url,files=files,timeout=10)
+    print(response.text)
+    return {"url": json.loads(response.text)}
+
+
 
