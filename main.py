@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
@@ -17,8 +17,15 @@ import cohere
 import langchain
 from langchain.chains.question_answering import load_qa_chain
 import os
+from matplotlib import pyplot as plt
+from matplotlib.font_manager import FontProperties
+import plots
+from datetime import datetime, timedelta
+import beautifulsoup as bs4
 
-def read_text_file(file_path):
+
+
+def read_text_file(file_path): # for food recommendation
     data = ""
     file = open(file_path, "r", encoding="utf8")
     for line in file.readlines():
@@ -47,7 +54,7 @@ def recommend(food_name):
     chunks = text_splitter.split_text(text=text)
 
     embeddings = CohereEmbeddings(
-        cohere_api_key=os.getenv("cohere_api")
+        cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
     )
     VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 
@@ -57,21 +64,21 @@ def recommend(food_name):
 
     if query:
         docs = VectorStore.similarity_search(query=query, k=3)
-        client = cohere.Client(os.getenv("cohere_api"))
+        client = cohere.Client("0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd")
         llm = Cohere(
-            client=client, cohere_api_key=os.getenv("cohere_api")
+            client=client, cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
         )
         chain = load_qa_chain(llm=llm, chain_type="stuff")
         response = chain.run(input_documents=docs, question=query)
         return response
 
-app = FastAPI()
+app = FastAPI() # FASTAPI
 
-account_sid  =os.getenv("twilio_sid")
-auth_token =os.getenv("twiliio_auth")
+account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c" # TWILIO
+auth_token ="2f1452378ac9a5bc6614eade59105fb9"
 client = Client(account_sid, auth_token)
 
-glucose_model = pickle.load(open("model.sav", 'rb'))
+glucose_model = pickle.load(open("model.sav", 'rb')) # GLUCOSE PREDICTION
 
 
 @app.get("/")
@@ -81,7 +88,7 @@ def read_root():
 @app.get("/glucose")
 def read_item(carbs: Union[float, None] = None, bpm : Union[float, None] = None, calories: Union[float, None] = None):
     if carbs and bpm and calories:
-        return {"glucose" : glucose_model.predict(np.array([[calories, carbs, bpm]]))[0]}
+        return {"glucose" : glucose_model.predict(np.array([[calories, carbs, bpm]]))[0]*18}
     return {}
 
 
@@ -98,3 +105,13 @@ def make_call():
 @app.get("/recommend")
 def recommend_food(food: Union[str, None] = None):
     return {"response": recommend(food)}
+
+@app.get("/report")
+def generate_report():
+    plots.generate_bars([30, 30, 10, 30], "bars/bars.png")
+    plots.generate_bpm([10, 20, 30, 40, 50, 60, 70], "bars/bpm.png")
+    plots.generate_calories([2000, 3000, 2500, 2250, 1800, 1900, 1500], "bars/calories.png")
+    plots.generate_glucose([10, 20, 40, 50, 60, 70, 80], "bars/glucose.png")
+
+    # generate the glucose wise bar graph (also need )
+
