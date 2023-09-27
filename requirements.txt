@@ -99,3 +99,4 @@ Werkzeug==2.3.7
 wrapt==1.15.0
 yarl==1.9.2
 zipp==3.16.2
+PyPDF2[all]
