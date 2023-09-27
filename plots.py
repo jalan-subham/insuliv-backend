@@ -167,3 +167,27 @@ def generate_glucose(vals, output_path):
     plt.savefig(output_path)
     rcParams.update(rcParamsDefault)
 
+def generate_expended(vals, output_path):
+    font_properties=FontProperties(fname='Roboto-Regular.ttf')
+
+    def last_7_days_dates():
+        today = datetime.today()
+        return (today - timedelta(days=6)).strftime('%d')
+
+    def plot_values(arr):
+        plt.figure()
+        plt.xlim(-0.5,7)
+        plt.ylim(0, 3500)  
+        plt.xticks(np.arange(7),[str(int(initial_day)+i) for i in range(0,7)])
+
+        plt.title("CALORIES BURNED",fontproperties=font_properties,fontsize=20)
+        plt.plot(arr)
+        plt.plot(arr,"o",color="#FF5252")
+    
+
+    initial_day=int(last_7_days_dates())
+
+    plot_values(vals)
+
+    plt.savefig(output_path)
+    rcParams.update(rcParamsDefault)

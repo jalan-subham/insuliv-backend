@@ -26,7 +26,7 @@ import pdfkit
 import requests 
 import json
 from mindee import Client, documents
-
+import random
 
 def read_text_file(file_path): # for food recommendation
     data = ""
@@ -36,30 +36,33 @@ def read_text_file(file_path): # for food recommendation
     file.close()
     return data
 
+path = "./docs"
+text = ""
+os.chdir(path)
+langchain.verbose = False
+for file in os.listdir():
+    if file.endswith(".txt"):
+        file_path = f"./{file}"
+        text += read_text_file(file_path)
+    elif file.endswith(".pdf"):
+        file_path = f"./{file}"
+        pdf = PdfReader(file_path)
+        for page in pdf.pages:
+            text += page.extractText()
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000, chunk_overlap=150, length_function=len
+)
+
+chunks = text_splitter.split_text(text=text)
+
+embeddings = CohereEmbeddings(
+    cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
+)
+VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+
+
 def recommend(food_name):
-    path = "./docs"
-    text = ""
-    os.chdir(path)
-    langchain.verbose = False
-    for file in os.listdir():
-        if file.endswith(".txt"):
-            file_path = f"./{file}"
-            text += read_text_file(file_path)
-        elif file.endswith(".pdf"):
-            file_path = f"./{file}"
-            pdf = PdfReader(file_path)
-            for page in pdf.pages:
-                text += page.extractText()
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000, chunk_overlap=150, length_function=len
-    )
-
-    chunks = text_splitter.split_text(text=text)
-
-    embeddings = CohereEmbeddings(
-        cohere_api_key="0ngkfNjlXOvHsR4PzcOCQd6vaRycOV4BkSkNVAKd"
-    )
-    VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+    
 
     query = f"My last meal was 2 hours ago and I ate {food_name}. Suggest me some other food option for dinner and some description of that food. Also if I ate something that I shouldn't eat then give reasons why it was bad. The response should be in this format: 'Your last meal was <food> <advice on this food>. So, <food> is a good option to eat now because it provides <description of the food>. '"
     # query = "I am hungry and I want to eat something. I am thinking of eating a burger. Is it a good option if i'm a diabetic?"
@@ -81,7 +84,7 @@ account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c" # TWILIO
 auth_token ="2f1452378ac9a5bc6614eade59105fb9"
 client = twilio.rest.Client(account_sid, auth_token)
 
-glucose_model = pickle.load(open("model.sav", 'rb')) # GLUCOSE PREDICTION
+# glucose_model = pickle.load(open("model.sav", 'rb')) # GLUCOSE PREDICTION
 
 mindee_client = Client(api_key="1c283084c67d6da8a2b4e13c0f126209").add_endpoint( # ocr
     account_name="AbhinavKun",
@@ -117,14 +120,15 @@ def recommend_food(food: Union[str, None] = None):
 @app.get("/report")
 def generate_report():
 
-    local_image_urls = ["bars/bars.png", "bars/bpm.png", "bars/calories.png", "bars/glucose.png"]
+    local_image_urls = ["bars/bars.png", "bars/bpm.png", "bars/calories.png", "bars/glucose.png", "bars/burned.png"]
     report_name = "report.pdf"
     # generate plots 
     data = requests.get("https://apollo-web-th7i.onrender.com/api/meta/weekly").text
     data = json.loads(data)
     bpm_data = data[2]["data"]
-    carbs_data = data[0]["data"]
-    calories_data = data[1]["data"]
+    carbs_data = [random.randint(80, 150) for i in range(7)]
+    calories_data = data[0]["data"]
+    burned_data = data[1]["data"]
 
     def predict_glucose(calories_, carbs_, bpm_):
         return glucose_model.predict(np.array([[calories_, carbs_, bpm_]]))[0]*18
@@ -135,12 +139,12 @@ def generate_report():
         bars_data[i] -= bars_data[i - 1]
     for i in range(bars_data.size):
         bars_data[i] = max(bars_data[i], 1)
-    print(bars_data)
-    bars_data = ((bars_data/bars_data.size)*100).astype(int)
+    bars_data = ((bars_data/np.sum(bars_data))*100).astype(int)
     plots.generate_bars(bars_data, local_image_urls[0])
     plots.generate_bpm(bpm_data, local_image_urls[1])
     plots.generate_calories(calories_data, local_image_urls[2])
     plots.generate_glucose(glucose_data, local_image_urls[3])
+    plots.generate_expended(burned_data, local_image_urls[4])
 
     # upload images 
 
@@ -165,7 +169,7 @@ def generate_report():
     
 
     # Find all img elements and update their src attributes
-    img_elements = soup.find_all('img')
+    img_elements = soup.find_all('img')[1:]
     for i, img in enumerate(img_elements):
         img['src'] = remote_image_urls[i]
 
