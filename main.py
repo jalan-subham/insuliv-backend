@@ -88,7 +88,7 @@ def recommend(food_name):
 app = FastAPI() # FASTAPI
 
 account_sid  ="AC9b1306b9fc75efcdda145e3b27dc8d7c" # TWILIO
-auth_token ="2f1452378ac9a5bc6614eade59105fb9"
+auth_token ="30146903908d0513ff246e97b8b9492a"
 client = twilio.rest.Client(account_sid, auth_token)
 
 glucose_model = pickle.load(open("./model.sav", 'rb')) # GLUCOSE PREDICTION
