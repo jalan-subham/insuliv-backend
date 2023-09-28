@@ -1,4 +1,4 @@
-Apple: Apples are a type of fruit with approximately 104 calories per medium-sized serving. They contain 27.60 grams of carbohydrates, 0.30 grams of fats, 0.50 grams of protein, and 4.80 grams of fiber.
+Apple: Apples are a type of fruit with approximately 104 calories per medium-sized serving. They contain 27.60 grams of carbohydrates, 0.30 grams of fats, 0.50 grams of protein, and 4.80 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/Jawy.jpg
 
 Arahar Dal: Arahar Dal is a food item with about 84.58 calories per 100 grams. It has 16.29 grams of carbohydrates, 0.25 grams of fats, 4.75 grams of protein, and 4.71 grams of fiber.
 
@@ -10,7 +10,7 @@ Brown Bread: Brown bread is a type of snack with approximately 232.14 calories p
 
 Chai: Chai is a popular beverage with about 105.00 calories per cup. It has 12.20 grams of carbohydrates, 3.70 grams of fats, 2.50 grams of protein, and no fiber.
 
-Chana Chaat: Chana Chaat is a snack with around 144.00 calories per 100-gram serving. It contains 19.20 grams of carbohydrates, 4.60 grams of fats, 6.50 grams of protein, and no fiber.
+Chana Chaat: Chana Chaat is a snack with around 144.00 calories per 100-gram serving. It contains 19.20 grams of carbohydrates, 4.60 grams of fats, 6.50 grams of protein, and no fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/vE3m.jpg
 
 Chicken Boneless Handi: Chicken Boneless Handi is a meal item with approximately 478.00 calories per serving. It has 14.40 grams of carbohydrates, 37.20 grams of fats, 23.40 grams of protein, and 3.80 grams of fiber.
 
@@ -22,9 +22,9 @@ Chocos: Chocos are a snack with around 381.00 calories per 100 grams. They have 
 
 Chole Bhature: Chole Bhature is a meal item with approximately 181.80 calories per 100 grams. It contains 20.95 grams of carbohydrates, 9.61 grams of fats, 4.70 grams of protein, and 3.95 grams of fiber.
 
-Cornflakes with Milk: Cornflakes with milk is a snack with about 653.33 calories per 100 grams. It has 101.33 grams of carbohydrates, 16.67 grams of fats, 20.67 grams of protein, and no fiber.
+Cornflakes with Milk: Cornflakes with milk is a snack with about 653.33 calories per 100 grams. It has 101.33 grams of carbohydrates, 16.67 grams of fats, 20.67 grams of protein, and no fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/lUTf.jpg
 
-Creamy Khimchi Coleslaw: Creamy Khimchi Coleslaw is a snack with approximately 96.00 calories per 100 grams. It contains 10.60 grams of carbohydrates, 4.70 grams of fats, 1.60 grams of protein, and 2.40 grams of fiber.
+Creamy Khimchi Coleslaw: Creamy Khimchi Coleslaw is a snack with approximately 96.00 calories per 100 grams. It contains 10.60 grams of carbohydrates, 4.70 grams of fats, 1.60 grams of protein, and 2.40 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/kJZx.jpg
 
 Curd Rice: Curd Rice is a meal item with around 86.25 calories per 100 grams. It has 15.67 grams of carbohydrates, 1.33 grams of fats, 2.54 grams of protein, and 0.21 grams of fiber.
 
@@ -47,7 +47,7 @@ Gulab Jamun: Gulab Jamun is a popular dessert with roughly 300.00 calories per p
 
 Hamburger: A hamburger is a fast food item with about 250.00 calories per serving. It has 31.00 grams of carbohydrates, 12.00 grams of fats, 9.00 grams of protein, and 2.00 grams of fiber.
 
-Idli: Idli is a South Indian steamed rice cake with approximately 39.00 calories per piece. It contains 8.00 grams of carbohydrates, 0.50 grams of fats, 1.00 gram of protein, and 0.50 grams of fiber.
+Idli: Idli is a South Indian steamed rice cake with approximately 39.00 calories per piece. It contains 8.00 grams of carbohydrates, 0.50 grams of fats, 1.00 gram of protein, and 0.50 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/1Q9y.jpg
 
 Kadai Paneer: Kadai Paneer is a vegetarian meal item with roughly 260.00 calories per serving. It contains 10.00 grams of carbohydrates, 20.00 grams of fats, 15.00 grams of protein, and 4.00 grams of fiber.
 
@@ -83,25 +83,25 @@ Vada: Vada is a deep-fried snack with about 100.00 calories per piece. It contai
 Vegetable Biryani: Vegetable Biryani is a flavorful rice dish with approximately 250.00 calories per serving. It has 40.00 grams of carbohydrates, 8.00 grams of fats, 6.00 grams of protein, and 5.00 grams of fiber.
 
 Veggie Burger: A veggie burger is a vegetarian fast food item with about 350.00 calories per serving. It contains 40.00 grams of carbohydrates, 15.00 grams of fats, 10.00 grams of protein, and 3.00 grams of fiber.
-Masala Bhindi Sabji: Masala Bhindi Sabji, a flavorful Indian dish, provides 205.40 calories for every 100 grams. It consists of 15.02 grams of carbohydrates, 14.62 grams of fats, 4.04 grams of protein, and 6.40 grams of fiber.
+Masala Bhindi Sabji: Masala Bhindi Sabji, a flavorful Indian dish, provides 205.40 calories for every 100 grams. It consists of 15.02 grams of carbohydrates, 14.62 grams of fats, 4.04 grams of protein, and 6.40 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/4Khp.jpg
 
 Masala Chaach: Masala Chaach is a refreshing Indian drink, with 66.00 calories per cup. It contains 5.40 grams of carbohydrates, 1.20 grams of fats, 5.00 grams of protein, and 0.00 grams of fiber.
 
 Masala Paneer Kathi Roll: Masala Paneer Kathi Roll is a delightful snack, offering 470.00 calories per piece. It comprises 46.00 grams of carbohydrates, 25.00 grams of fats, 11.00 grams of protein, and 3.00 grams of fiber.
 
-Masur Dal: Masur Dal, a popular lentil dish, contains 77.92 calories in every 100 grams. It is rich in 10.42 grams of carbohydrates, 2.08 grams of fats, 4.58 grams of protein, and 3.75 grams of fiber.
+Masur Dal: Masur Dal, a popular lentil dish, contains 77.92 calories in every 100 grams. It is rich in 10.42 grams of carbohydrates, 2.08 grams of fats, 4.58 grams of protein, and 3.75 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/hITh.jpg
 
 Medu Vada: Medu Vada is a South Indian delicacy, with 135.00 calories per piece. It consists of 11.30 grams of carbohydrates, 8.40 grams of fats, 4.40 grams of protein, and 2.00 grams of fiber.
 
 Methi Paratha: Methi Paratha, a type of Indian flatbread, provides 260.00 calories per piece. It contains 36.00 grams of carbohydrates, 2.00 grams of fats, 5.00 grams of protein, and 4.00 grams of fiber.
 
-Milk (Low Fat): Low-fat milk is a nutritious beverage, with 105.00 calories per cup. It includes 12.70 grams of carbohydrates, 2.30 grams of fats, 8.20 grams of protein, and 0.00 grams of fiber.
+Milk (Low Fat): Low-fat milk is a nutritious beverage, with 105.00 calories per cup. It includes 12.70 grams of carbohydrates, 2.30 grams of fats, 8.20 grams of protein, and 0.00 grams of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/75vu.jpg
 
 Missi Roti: Missi Roti, a traditional Indian bread, offers 342.22 calories for every 45-gram serving. It consists of 68.22 grams of carbohydrates, 4.00 grams of fats, 16.44 grams of protein, and 15.56 grams of fiber.
 
 Moong Dal Halwa: Moong Dal Halwa contains 558.33 calories per 100g serving with 30.83g of carbohydrates, 46.67g of fats, 4.17g of protein, and 0.00g of fiber.
 
-Oats: Oats have 60.83 calories per 100g serving with 9.58g of carbohydrates, 1.33g of fats, 2.42g of protein, and 2.04g of fiber.
+Oats: Oats have 60.83 calories per 100g serving with 9.58g of carbohydrates, 1.33g of fats, 2.42g of protein, and 2.04g of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/NUP1.jpg
 
 Palak Paneer: Palak Paneer provides 152.50 calories per 100g serving with 4.17g of carbohydrates, 12.71g of fats, 6.29g of protein, and 1.08g of fiber.
 
@@ -121,7 +121,7 @@ Saffron Rice: Saffron Rice contains 83.33 calories per 100g serving with 17.92g 
 
 Sambhar: Sambhar has 250.00 calories per bowl serving with 40.00g of carbohydrates, 10.00g of fats, 6.00g of protein, and 3.00g of fiber.
 
-Scrambled Eggs: Scrambled Eggs contain 136.67 calories per 100g serving with 1.46g of carbohydrates, 10.08g of fats, 9.17g of protein, and 0.00g of fiber.
+Scrambled Eggs: Scrambled Eggs contain 136.67 calories per 100g serving with 1.46g of carbohydrates, 10.08g of fats, 9.17g of protein, and 0.00g of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/Jme2.jpg
 
 Sev Bhaji: Sev Bhaji provides 107.12 calories per 100g serving with 6.95g of carbohydrates, 8.73g of fats, 1.44g of protein, and 1.75g of fiber.
 
@@ -135,7 +135,7 @@ Sweet Pongal: Sweet Pongal has 666.67 calories per 100g serving with 96.67g of c
 
 Tandoori Roti: Tandoori Roti contains 170.00 calories per piece with 35.00g of carbohydrates, 1.00g of fats, 6.00g of protein, and 3.00g of fiber.
 
-Three Bean Salad: Three Bean Salad provides 119.00 calories per 0.5 cup serving with 19.90g of carbohydrates, 3.40g of fats, 3.00g of protein, and 2.90g of fiber.
+Three Bean Salad: Three Bean Salad provides 119.00 calories per 0.5 cup serving with 19.90g of carbohydrates, 3.40g of fats, 3.00g of protein, and 2.90g of fiber. . It is good for diabetics. Link to URL -https://apollo-web-th7i.onrender.com/api/image/5sXi.jpg
 
 Toor Dal Fry: Toor Dal Fry has 351.50 calories per 100g serving with 65.00g of carbohydrates, 1.55g of fats, 22.00g of protein, and 15.50g of fiber.
 
@@ -177,5 +177,5 @@ Veg Jalfrezi: Veg Jalfrezi (Roasted) is a meal with 33.75 calories per 100g serv
 
 Veg Pulao: Veg Pulao (Homemade) is a meal with 265.00 calories per serving. It consists of 48.20g of carbohydrates, 9.10g of fats, 9.50g of protein, and 11.70g of fiber.
 
-Veg Roll: Veg Roll (Generic) is a snack with 41.00 calories per piece. It contains 5.20g of carbohydrates, 1.60g of fats, 1.40g of protein, and 0.50g of fiber.
+Veg Roll: Veg Roll (Generic) is a snack with 41.00 calories per piece. It contains 5.20g of carbohydrates, 1.60g of fats, 1.40g of protein, and 0.50g of fiber. It is good for diabetics. Link to URL - https://apollo-web-th7i.onrender.com/api/image/FynJ.jpg
 
