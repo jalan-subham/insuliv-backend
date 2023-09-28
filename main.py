@@ -66,7 +66,7 @@ VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 def recommend(food_name):
     
 
-    query = f"My last meal was {food_name}. Suggest me some other food option for dinner and some description of that food. Also give me feedback, if my last meal might be bad. The response should be in this format: '1. Your last meal was <food>. 2. <advice on this food>. 3. '<food name>' 4. '<food name>' is a good option to eat now because it provides '<description of the food with nutrition details in bullet points>'. 5. '<link of image of the food>'"
+    query = f"My last meal was {food_name}. Suggest me some other food option for dinner and some description of that food. Also give me feedback, if my last meal might be bad. The response should be in this format: '1. Your last meal was <food>. 2. <advice on this food>. 3. '<food name>' 4. '<food name>' is a good option to eat now because it provides '<description of the food with nutrition details in bullet points>'"
     # query = "I am hungry and I want to eat something. I am thinking of eating a burger. Is it a good option if i'm a diabetic?"
     # query = "My calorie goal is 1000. I already ate apple today. Give me a balanced diet for my calorie goal, I'm diabetic so keep that in mind? give me numerical data to back up your answer."
 
