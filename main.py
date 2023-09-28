@@ -79,10 +79,11 @@ def recommend(food_name):
         chain = load_qa_chain(llm=llm, chain_type="stuff")
         response = chain.run(input_documents=docs, question=query)
         response = response.strip()
-        pattern = r"(.*?)(?=\d+\.|\Z)"
-        matches = re.findall(pattern, response, re.DOTALL)
-        result = [match.strip() for match in matches[:4] if match.strip() != ""]
-        return result
+        final = []
+        for line in response.split("\n"):
+            if line and line[0].isdigit():
+                final.append(line[2:].strip())
+        return final
 
 app = FastAPI() # FASTAPI
 
