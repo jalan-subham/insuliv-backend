@@ -78,7 +78,7 @@ def recommend(food_name):
         )
         chain = load_qa_chain(llm=llm, chain_type="stuff")
         response = chain.run(input_documents=docs, question=query)
-        response = response.text.strip()
+        response = response.strip()
         pattern = r"(.*?)(?=\d+\.|\Z)"
         matches = re.findall(pattern, response, re.DOTALL)
         result = [match.strip() for match in matches[:4] if match.strip() != ""]
